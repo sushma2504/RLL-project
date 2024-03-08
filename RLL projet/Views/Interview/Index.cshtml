@@ -1,0 +1,25 @@
+﻿@model List<Interview>
+
+@{
+    ViewBag.Title = "Interview Schedule";
+}
+
+<h2>Interview Schedule</h2>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Candidate Name</th>
+        <th>Interview Date</th>
+        <th>Interviewer</th>
+    </tr>
+    @foreach (var interview in Model)
+    {
+        <tr>
+            <td>@interview.Id</td>
+            <td>@interview.CandidateName</td>
+            <td>@interview.InterviewDate.ToString("yyyy-MM-dd HH:mm")</td>
+            <td>@interview.Interviewer</td>
+        </tr>
+    }
+</table>

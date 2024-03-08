@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Issue Offer Letter";
+    var candidate = null as Candidate;
+
+    foreach (var c in Model)
+    {
+        if (c.Name == ViewBag.CandidateName)
+        {
+            candidate = c;
+            break;
+        }
+    }
+}
+
+<h2>Offer Letter</h2>
+
+<p>Congratulations, @ViewBag.CandidateName! We are pleased to offer you the position of @candidate?.Position with our company.</p>
+
+<p>Please review the offer details and let us know if you accept the offer. We look forward to welcoming you to our team!</p>

@@ -1,0 +1,34 @@
+﻿@model List<Candidate>
+
+@{
+    ViewBag.Title = "Candidates List";
+}
+
+<h2>Candidates List</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Shortlisted</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var candidate in Model)
+    {
+        <tr>
+            <td>@candidate.Name</td>
+            <td>@candidate.Position</td>
+            <td>@(candidate.IsShortlisted ? "Yes" : "No")</td>
+            <td>
+                @if (candidate.IsShortlisted)
+                {
+                    <a href="@Url.Action("IssueOfferLetter", new { candidateName = candidate.Name })">Issue Offer Letter</a>
+                }
+                else
+                {
+                    <span>Not Shortlisted</span>
+                }
+            </td>
+        </tr>
+    }
+</table>

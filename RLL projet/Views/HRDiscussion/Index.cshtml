@@ -1,0 +1,31 @@
+﻿@model List<HRDiscussion>
+
+@{
+    ViewBag.Title = "HR Discussions";
+}
+
+<h2>HR Discussions</h2>
+
+<table class="table">
+    <tr>
+        <th>Candidate Name</th>
+        <th>Interviewer</th>
+        <th>Interview Date</th>
+        <th>Communication Skills Rating</th>
+        <th>Technical Skills Rating</th>
+        <th>Problem Solving Rating</th>
+        <th>Comments</th>
+    </tr>
+    @foreach (var hrDiscussion in Model)
+    {
+        <tr>
+            <td>@hrDiscussion.CandidateName</td>
+            <td>@hrDiscussion.Interviewer</td>
+            <td>@hrDiscussion.InterviewDate</td>
+            <td>@hrDiscussion.CommunicationSkillsRating</td>
+            <td>@hrDiscussion.TechnicalSkillsRating</td>
+            <td>@hrDiscussion.ProblemSolvingRating</td>
+            <td>@hrDiscussion.Comments</td>
+        </tr>
+    }
+</table>
